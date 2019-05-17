@@ -1,0 +1,15 @@
+输入图像尺寸为N×N，卷积核尺寸为F×F，步长为stride时
+Output size:
+(N - F) / stride + 1
+e.g. N = 7, F = 3:
+stride=1 => (7 - 3)/1 + 1 = 5
+stride=2 => (7 - 3)/2 + 1 = 5
+stride=3 => (7 - 3)/3 + 1 = 2.33 :(
+实际上我们使用零填充我们的输入图片，使用零填充是为了保持输出和之前的输入大小相同。
+filters of size FxF,and zero-padding with (F - 1)/2
+e.g.
+F = 3 => zero-padding with 1
+F = 5 => zero-padding with 2
+F = 7 => zero-padding with 3
+
+池化：就是一个降采样的过程
